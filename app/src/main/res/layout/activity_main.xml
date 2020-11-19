@@ -1,45 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical">
-
-    
-    <EditText
-        android:id="@+id/et_main"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="type here"
-        />
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:text="TextView" />
+    android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
+        android:id="@+id/ll_btns"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Reverse"
-        />
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="121dp"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/btn_ure"
-        android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/btn_undo"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btn_undo" />
+
+        <Button
+            android:id="@+id/btn_redo"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btn_redo" />
+
+        <Button
+            android:id="@+id/btn_revert"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Reverse" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/et_area"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_above="@id/ll_btns"
+        android:layout_marginBottom="131dp"
+        android:background="@null"
+        android:gravity="top"
+        android:hint="type here"
+        android:imeOptions="flagNoExtractUi"
+        android:inputType="textMultiLine"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="undo/redo"
-        />
-    </LinearLayout>>
-</LinearLayout>
+        android:layout_above="@+id/et_area"
+        android:layout_marginBottom="34dp"
+        android:textSize="40sp" />
+
+</RelativeLayout>
