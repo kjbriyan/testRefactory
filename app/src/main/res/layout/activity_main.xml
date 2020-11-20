@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="121dp"
+        android:layout_marginBottom="270dp"
         android:orientation="horizontal">
 
         <Button
@@ -18,7 +18,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/btn_undo" />
+            android:text="Undo/Redo" />
 
         <Button
             android:id="@+id/btn_redo"
@@ -40,9 +40,9 @@
     <EditText
         android:id="@+id/et_area"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="87dp"
         android:layout_above="@id/ll_btns"
-        android:layout_marginBottom="131dp"
+        android:layout_marginBottom="70dp"
         android:background="@null"
         android:gravity="top"
         android:hint="type here"

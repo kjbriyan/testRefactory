@@ -2,6 +2,7 @@ package com.arsitek.test
 
 import android.app.Activity
 import android.os.Bundle
+import android.os.SystemClock
 import android.util.Log
 import android.view.GestureDetector
 import android.view.MotionEvent
@@ -12,10 +13,6 @@ import android.widget.TextView
 import android.widget.Toast
 import com.arsitek.test.TextUndoRedo.TextChangeInfo
 
-// tidak merekomendasikan doble click digunakan untuk action ini
-// dikarenakan Menerapkan Sentuhan Ganda akan memengaruhi penanganan Sentuhan Tunggal, karena Anda
-// harus menunggu untuk melihat apakah setiap Sentuhan Tunggal berubah menjadi Sentuhan Ganda sebelum Anda
-// dapat memprosesnya.
 
 class MainActivity : Activity(), TextChangeInfo {
     private var TUR: TextUndoRedo? = null
@@ -50,7 +47,13 @@ class MainActivity : Activity(), TextChangeInfo {
             tv?.setText(get)
         }
 
-        btn_undo?.setOnTouchListener(object : View.OnTouchListener{
+// tidak merekomendasikan doble click digunakan untuk action ini
+// dikarenakan Menerapkan Sentuhan Ganda akan memengaruhi penanganan Sentuhan Tunggal, karena Anda
+// harus menunggu untuk melihat apakah setiap Sentuhan Tunggal berubah menjadi Sentuhan Ganda sebelum Anda
+// dapat memprosesnya.
+
+        btn_undo?.setOnTouchListener(object : View.OnTouchListener  {
+
             val gestureDetector = GestureDetector(object : GestureDetector.SimpleOnGestureListener(){
                 override fun onSingleTapUp(e: MotionEvent?): Boolean {
                     TUR!!.exeUndo()
